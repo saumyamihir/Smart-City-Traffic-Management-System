@@ -2,171 +2,691 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart City Traffic Management</title>
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SmartRoute AI | Smart City Traffic Management</title>
 
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
 </head>
 
 <body>
 
-<header class="navbar">
+    <!-- ================= NAVBAR ================= -->
 
-    <div class="logo">
-        🚦 Smart City
-    </div>
+    <header class="navbar" id="navbar">
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#routes">Routes</a>
-        <a href="#traffic">Traffic</a>
-        <a href="#dashboard">Dashboard</a>
-    </nav>
+        <div class="nav-container">
 
-</header>
+            <div class="logo">
 
-<section class="hero" id="home">
+                <div class="logo-icon">
+                    🚦
+                </div>
 
-    <div class="hero-content">
+                <div>
+                    <span class="logo-title">
+                        SmartRoute
+                    </span>
 
-        <span class="badge">AI Powered Navigation</span>
+                    <span class="logo-ai">
+                        AI
+                    </span>
+                </div>
 
-        <h1>
-            Smart City
-            <span>Traffic Management</span>
-        </h1>
+            </div>
+
+
+            <nav class="nav-links">
+
+                <a href="#home">Home</a>
+
+                <a href="#routes">Routes</a>
+
+                <a href="#mapSection">Map</a>
+
+                <a href="#dashboard">Dashboard</a>
+
+            </nav>
+
+
+            <!-- DARK / LIGHT MODE -->
+
+            <button
+                class="theme-toggle"
+                id="themeToggle"
+                aria-label="Toggle Dark Mode"
+            >
+
+                <span id="themeIcon">
+                    🌙
+                </span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section
+        class="hero"
+        id="home"
+    >
+
+        <div class="hero-background"></div>
+
+
+        <div class="hero-content">
+
+            <div class="badge">
+
+                <span class="badge-dot"></span>
+
+                AI Powered Navigation
+
+            </div>
+
+
+            <h1>
+
+                Navigate Your City
+
+                <span>
+                    Smarter & Faster
+                </span>
+
+            </h1>
+
+
+            <p>
+
+                Discover intelligent routes using
+                Dijkstra Algorithm, BFS and Graph
+                Data Structures.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <button
+                    class="primary-btn"
+                    onclick="scrollToRoutes()"
+                >
+
+                    🚀 Find Best Route
+
+                </button>
+
+
+                <button
+                    class="secondary-btn"
+                    onclick="scrollToMap()"
+                >
+
+                    🗺 Explore Map
+
+                </button>
+
+            </div>
+
+
+            <!-- HERO STATS -->
+
+            <div class="hero-stats">
+
+                <div class="hero-stat">
+
+                    <span id="heroCities">
+                        5+
+                    </span>
+
+                    <p>
+                        Connected Cities
+                    </p>
+
+                </div>
+
+
+                <div class="hero-stat">
+
+                    <span>
+                        AI
+                    </span>
+
+                    <p>
+                        Smart Routing
+                    </p>
+
+                </div>
+
+
+                <div class="hero-stat">
+
+                    <span>
+                        3
+                    </span>
+
+                    <p>
+                        Algorithms
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= ROUTE SEARCH ================= -->
+
+    <section
+        class="route-section"
+        id="routes"
+    >
+
+        <div class="section-heading">
+
+            <span>
+                ROUTE PLANNER
+            </span>
+
+            <h2>
+                Find Your Best Route
+            </h2>
+
+            <p>
+
+                Select your source, destination
+                and vehicle to calculate the
+                optimal route.
+
+            </p>
+
+        </div>
+
+
+        <div class="route-layout">
+
+
+            <!-- ROUTE CARD -->
+
+            <div class="route-card">
+
+                <div class="route-card-header">
+
+                    <div class="route-icon">
+                        🚗
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Plan Your Journey
+                        </h2>
+
+                        <p>
+                            Smart route optimization
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        📍 Source City
+                    </label>
+
+                    <select id="source">
+
+                        <option value="">
+                            Select Source City
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="route-swap">
+
+                    ⇅
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        🎯 Destination City
+                    </label>
+
+                    <select id="destination">
+
+                        <option value="">
+                            Select Destination City
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        🚙 Vehicle Type
+                    </label>
+
+                    <select id="vehicle">
+
+                        <option value="Car">
+                            🚗 Car
+                        </option>
+
+                        <option value="Bike">
+                            🏍 Bike
+                        </option>
+
+                        <option value="Bus">
+                            🚌 Bus
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button
+                    onclick="findRoute()"
+                    class="find-btn"
+                >
+
+                    <span id="findBtnText">
+                        Find Best Route
+                    </span>
+
+                    <span>
+                        →
+                    </span>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- ALGORITHM CARD -->
+
+            <div class="algorithm-card">
+
+                <div class="algorithm-header">
+
+                    <span>
+                        🧠
+                    </span>
+
+                    <div>
+
+                        <h2>
+                            Algorithms Used
+                        </h2>
+
+                        <p>
+                            Smart route calculation
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="algorithm-item">
+
+                    <div class="algorithm-number">
+                        01
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Dijkstra Algorithm
+                        </h3>
+
+                        <p>
+
+                            Finds the shortest
+                            weighted path between
+                            source and destination.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="algorithm-item">
+
+                    <div class="algorithm-number">
+                        02
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            BFS Algorithm
+                        </h3>
+
+                        <p>
+
+                            Helps explore connected
+                            locations and nearby
+                            places.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="algorithm-item">
+
+                    <div class="algorithm-number">
+                        03
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Graph Data Structure
+                        </h3>
+
+                        <p>
+
+                            Represents cities as nodes
+                            and roads as weighted edges.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= MAP ================= -->
+
+    <section
+        class="map-section"
+        id="mapSection"
+    >
+
+        <div class="map-wrapper">
+
+
+            <div class="map-header">
+
+                <div>
+
+                    <span class="section-tag">
+
+                        LIVE NAVIGATION
+
+                    </span>
+
+                    <h2>
+
+                        Explore City Network
+
+                    </h2>
+
+                </div>
+
+
+                <div class="map-status">
+
+                    <span class="status-dot"></span>
+
+                    Live Map
+
+                </div>
+
+            </div>
+
+
+            <div id="map"></div>
+
+
+            <!-- MAP INFO -->
+
+            <div class="map-floating-card">
+
+                <span>
+                    🚦
+                </span>
+
+                <div>
+
+                    <strong>
+                        Smart Traffic Network
+                    </strong>
+
+                    <p>
+                        Select cities to visualize route
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= ROUTE RESULT ================= -->
+
+    <section
+        class="results-section"
+        id="dashboard"
+    >
+
+        <div class="section-heading">
+
+            <span>
+                ROUTE INSIGHTS
+            </span>
+
+            <h2>
+                Journey Dashboard
+            </h2>
+
+        </div>
+
+
+        <div class="results-grid">
+
+
+            <!-- ROUTE SUMMARY -->
+
+            <div class="result-card">
+
+                <div class="card-title">
+
+                    <div class="title-icon">
+                        🚦
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Route Summary
+                        </h2>
+
+                        <p>
+                            Your optimized journey
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="result"
+                    class="empty-state"
+                >
+
+                    <div class="empty-icon">
+                        🗺️
+                    </div>
+
+                    <h3>
+                        Plan Your Journey
+                    </h3>
+
+                    <p>
+
+                        Select source and destination
+                        to view route details.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- NEARBY PLACES -->
+
+            <div class="nearby-card">
+
+                <div class="card-title">
+
+                    <div class="title-icon">
+                        📍
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Nearby Places
+                        </h2>
+
+                        <p>
+                            Explore your destination
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="nearbyPlaces"
+                    class="empty-state"
+                >
+
+                    <div class="empty-icon">
+                        🏥
+                    </div>
+
+                    <h3>
+                        Nearby Locations
+                    </h3>
+
+                    <p>
+
+                        Nearby hospitals, ATMs,
+                        petrol pumps and more
+                        will appear here.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+   
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-logo">
+
+            🚦 SmartRoute AI
+
+        </div>
+
 
         <p>
-            Find the shortest and fastest route using
-            Dijkstra Algorithm, BFS and Graph Data Structure.
+
+            Smart City Traffic Management System
+            powered by Graph Algorithms,
+            Dijkstra and BFS.
+
         </p>
 
-        <div class="hero-buttons">
 
-            <button class="primary-btn"
-            onclick="document.getElementById('routes').scrollIntoView({behavior:'smooth'})">
-                🚀 Find Route
-            </button>
+        <div class="footer-bottom">
 
-            <button class="secondary-btn"
-            onclick="document.getElementById('traffic').scrollIntoView({behavior:'smooth'})">
-                🗺 View Graph
-            </button>
+            © 2026 SmartRoute AI
+            • Intelligent Urban Navigation
 
         </div>
 
-    </div>
+    </footer>
 
-</section>
 
-<section class="dashboard" id="routes">
 
-    <div class="route-card">
+    <!-- ================= SCRIPTS ================= -->
 
-        <h2>🚗 Route Finder</h2>
+    <script
+        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    ></script>
 
-        <label>Source City</label>
-        <select id="source"></select>
+    <script src="js/graph.js"></script>
 
-        <label>Destination City</label>
-        <select id="destination"></select>
+    <script src="js/map.js"></script>
 
-        <label>Vehicle</label>
+    <script src="js/app.js"></script>
 
-        <select id="vehicle">
-            <option>Car</option>
-            <option>Bike</option>
-            <option>Bus</option>
-        </select>
-
-        <button onclick="findRoute()" class="find-btn">
-            Find Best Route
-        </button>
-
-    </div>
-
-    <div class="stats-panel">
-
-        <div class="info-card">
-            <h3>Total Cities</h3>
-            <span>5</span>
-        </div>
-
-        <div class="info-card">
-            <h3>Total Roads</h3>
-            <span>5</span>
-        </div>
-
-        <div class="info-card">
-            <h3>Traffic</h3>
-            <span>Medium</span>
-        </div>
-
-        <div class="info-card">
-            <h3>Algorithms</h3>
-            <span>Dijkstra<br>BFS<br>Graph</span>
-        </div>
-
-    </div>
-
-</section>
-
-<section class="graph-card" id="traffic">
-
-    <h2>🗺️ City Network</h2>
-
-    <canvas id="graphCanvas" width="1200" height="420"></canvas>
-
-</section>
-
-<section class="map-card">
-
-    <h2>🗺 Live City Map</h2>
-
-    <div id="map"></div>
-
-</section>
-
-<div class="bottom-section" id="dashboard">
-
-    <section class="result-card">
-
-        <h2>🚦 Route Summary</h2>
-
-        <div id="result">
-            Search a route to view details.
-        </div>
-
-    </section>
-
-    <section class="nearby-card">
-
-        <h2>🏥 Nearby Places</h2>
-
-        <div id="nearbyPlaces">
-            Nearby places will appear here.
-        </div>
-
-    </section>
-
-</div>
-
-<footer>
-
-    <h3>🚦 Smart City Traffic Management</h3>
-
-    <p>
-        Developed using Graph, Dijkstra, BFS,
-        HTML, CSS, JavaScript and Node.js
-    </p>
-
-</footer>
-
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="js/graph.js"></script>
-<script src="js/app.js"></script>
-<script src="js/map.js"></script>
+    <script src="js/theme.js"></script>
 
 </body>
 </html>

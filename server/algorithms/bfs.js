@@ -1,10 +1,20 @@
 function bfsPlaces(city, places) {
 
-    if (!places[city]) {
-        return [];
+    // City data available hai
+    if (places[city]) {
+
+        return places[city];
+
     }
 
-    return places[city];
+    // Agar city ke nearby places available nahi hain
+    return [
+        "City Center",
+        "Government Hospital",
+        "Main Railway Station",
+        "SBI ATM",
+        "Petrol Pump"
+    ];
 
 }
 
