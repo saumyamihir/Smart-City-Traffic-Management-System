@@ -1,9 +1,3 @@
-Haan bhai, **ab samajh gaya exactly kya chahiye** 🔥
-Tera purana README ka style kaafi clean tha—**badges → intro → live demo → screenshots → features → algorithms → tech stack → folder structure → installation → future enhancements**. 
-
-Main **usi style ko maintain karke**, bas aaj wale upgrades add karke README bana deta hoon. Direct purana README replace kar dena:
-
-````markdown
 # 🚦 Smart City Traffic Management System
 
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
@@ -164,8 +158,6 @@ The system currently supports multiple cities from different Indian states.
 - Used to build the complete transportation network
 
 Example:
-
-```text
 Patna
   │
   │ 20 KM
@@ -175,17 +167,12 @@ Hajipur
   │ 52 KM
   ▼
 Muzaffarpur
-````
-
----
 
 ## 📌 Dijkstra Algorithm
 
 Dijkstra's Algorithm is used to calculate the shortest available route between the selected source and destination cities.
 
 ### Workflow
-
-```text
 Source
    │
    ▼
@@ -196,15 +183,12 @@ Dijkstra Algorithm
    │
    ▼
 Best Available Route
-```
 
 The algorithm calculates:
 
 * Best route
 * Total distance
 * Intermediate cities
-
----
 
 ## 📌 Breadth First Search (BFS)
 
@@ -258,7 +242,6 @@ The system supports different traffic conditions:
 
 Traffic conditions affect the estimated travel time.
 
-```text
 Low Traffic
      │
      ▼
@@ -275,9 +258,7 @@ High Traffic
      │
      ▼
 Longer Travel Time
-```
 
----
 
 # 🚗 Vehicle Support
 
@@ -291,7 +272,7 @@ Each vehicle has a different average speed.
 
 The estimated travel time depends on:
 
-```text
+
 Distance
    +
 Vehicle Speed
@@ -299,9 +280,7 @@ Vehicle Speed
 Traffic Condition
    =
 Estimated Travel Time
-```
 
----
 
 # 🛠️ Tech Stack
 
@@ -336,7 +315,6 @@ Estimated Travel Time
 
 # 📂 Folder Structure
 
-```text
 Smart-City-Traffic-Management-System
 │
 ├── client
@@ -390,102 +368,53 @@ Smart-City-Traffic-Management-System
 ├── Smart-City-Traffic-Management-System.pptx
 │
 └── README.md
-```
 
----
 
 # ⚙️ Installation
 
-Clone the repository:
+Clone the repository: git clone https://github.com/saumyamihir/Smart-City-Traffic-Management-System.git
 
-```bash
-git clone https://github.com/saumyamihir/Smart-City-Traffic-Management-System.git
-```
 
-Move into the project directory:
-
-```bash
-cd Smart-City-Traffic-Management-System
-```
+Move into the project directory: cd Smart-City-Traffic-Management-System
 
 Install backend dependencies:
-
-```bash
 cd server
 npm install
-```
 
 Start the backend server:
-
-```bash
 node server.js
-```
 
-The backend will run on:
-
-```text
-http://localhost:5000
-```
+The backend will run on: http://localhost:5000
 
 Open the frontend using **Live Server**.
-
-Open:
-
-```text
-client/index.html
-```
-
----
+Open: client/index.html
 
 # 🔌 API Endpoints
 
 ## 📍 Get All Cities
 
-```text
 GET /api/cities
-```
-
 Example:
-
-```text
 http://localhost:5000/api/cities
-```
-
----
 
 ## 🛣️ Find Route
 
-```text
 GET /api/route
-```
-
 Example:
-
-```text
 /api/route?source=Patna&destination=Muzaffarpur&vehicle=Car
-```
-
----
 
 ## 📍 Get Nearby Places
 
-```text
 GET /api/places
-```
 
 Example:
 
-```text
 /api/places?city=Patna
-```
-
----
 
 # 🚦 Route Calculation
 
 The system performs the following steps:
 
-```text
 User Input
      │
      ▼
@@ -517,9 +446,7 @@ Nearby Places
      │
      ▼
 Map Route Highlight
-```
 
----
 
 # 🔮 Future Enhancements
 
@@ -534,7 +461,6 @@ Map Route Highlight
 * 🚦 Smart Traffic Signal Control
 * 📱 Mobile Application
 
----
 
 # 👨‍💻 Developers
 
@@ -546,19 +472,13 @@ GitHub:
 
 [https://github.com/saumyamihir](https://github.com/saumyamihir)
 
----
 
 # 📄 License
 
 This project is developed for **educational**, **internship**, and **learning** purposes.
 
----
 
 ## ⭐ If you like this project, don't forget to give it a Star on GitHub!
 
 🚦 **Making city transportation smarter through algorithms, route optimization, and interactive maps.**
 
-```
-
-**Ye wala tera original README ke kaafi close style me hai**, bas screenshots aur features ko aaj ke upgraded project ke according update kiya hai.
-```
