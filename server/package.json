@@ -1,13 +1,18 @@
 {
-  "name": "server",
+  "name": "smart-city-traffic-server",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Backend for Smart City Traffic Management System",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "dev": "node server.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "smart-city",
+    "traffic-management",
+    "route-finder"
+  ],
+  "author": "Saumya Mihir",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
