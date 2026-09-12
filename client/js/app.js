@@ -2,7 +2,7 @@
    API BASE URL
 ======================================== */
 
-const API_BASE_URL = "http://localhost:5000/api";
+const API_BASE_URL = "https://smart-city-traffic-backend.onrender.com/api";
 
 
 /* ========================================
