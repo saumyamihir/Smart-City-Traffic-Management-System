@@ -1,117 +1,93 @@
 # 🚦 Smart City Traffic Management System
 
-A full-stack **Smart City Traffic Management System** that helps users find the best route between cities, visualize routes on an interactive map, check traffic conditions, estimate travel time and fuel cost, and explore nearby places.
+A modern web-based **Smart City Traffic Management System** that helps users find the best route between cities, visualize routes on an interactive live map, check traffic conditions, estimate travel time and fuel cost, and explore nearby places.
 
-The project uses **Graph Data Structures and Dijkstra's Algorithm** for route finding and provides an interactive frontend with a **satellite map view**.
-
----
-
-## 🌟 Features
-
-### 🗺️ Interactive Live Map
-
-- Interactive city map using **Leaflet.js**
-- Satellite map view
-- Normal map view
-- City markers
-- Source and destination highlighting
-- Route visualization on the map
-- Automatic zoom to selected cities
-- Automatic route fitting on the map
+The project uses **Graph Data Structures and Dijkstra's Algorithm** for route finding and provides an interactive frontend with a satellite map interface.
 
 ---
 
-### 🚗 Smart Route Finder
+## 🌐 Live Features
 
-Users can:
+The system allows users to:
 
 - Select a source city
 - Select a destination city
-- Select a vehicle
+- Choose a vehicle type
 - Find the best available route
-- View intermediate cities
-- View total distance
-- View traffic condition
+- View the route on an interactive map
+- Highlight source and destination cities
+- Check route distance
 - View estimated travel time
-- View fuel cost
+- Check traffic conditions
+- Calculate estimated fuel cost
+- View nearby places
+- Switch between map layers
+- Use satellite map view
+- Use light and dark mode
+- Explore multiple cities across different Indian states
 
 ---
 
-### 🚦 Traffic Management
+# ✨ Features
 
-The system supports different traffic conditions:
+## 🗺️ Interactive Live Map
 
-- 🟢 Low Traffic
-- 🟡 Medium Traffic
-- 🔴 High Traffic
+The application uses an interactive map to display cities and routes.
 
-Traffic conditions affect the estimated travel time.
+Features include:
 
----
-
-### 🚙 Vehicle Support
-
-The route system supports multiple vehicles:
-
-- 🚗 Car
-- 🏍️ Bike
-- 🚌 Bus
-
-Travel time is calculated based on vehicle speed and traffic conditions.
+- Satellite map view
+- Normal map view
+- City labels
+- City markers
+- Source city highlighting
+- Destination city highlighting
+- Automatic zoom to selected cities
+- Automatic route fitting
+- Route visualization
 
 ---
 
-### 📍 City Highlighting
+## 🚦 Smart Route Finding
 
-When a user selects:
+The system finds the best route between selected cities using graph-based algorithms.
 
-- Source City → The city is highlighted with a special marker.
-- Destination City → The destination is highlighted separately.
+Example: Patna → Hajipur → Muzaffarpur → Motihari
 
-The map automatically moves and zooms to the selected city.
+The route is displayed both as:
+Route summary
+Interactive map route
 
----
+🧠 Algorithms Used :
 
-### 🛣️ Route Visualization
+Dijkstra's Algorithm : Used to find the shortest route between two cities based on distance.
 
-After clicking **Find Best Route**:
+Source City
+     ↓
+Graph Traversal
+     ↓
+Shortest Distance Calculation
+     ↓
+Best Route
 
-- The route is calculated using Dijkstra's Algorithm.
-- The route is displayed on the map.
-- Source and destination are highlighted.
-- The map automatically adjusts to show the complete route.
-- Intermediate cities are included in the route.
+BFS (Breadth First Search) : Used for nearby place searching.
+
+The system retrieves nearby locations associated with a selected city.
 
 Example:
 
-Patna ➜ Hajipur ➜ Muzaffarpur ➜ Motihari
+City
+ ↓
+Nearby Places
+ ↓
+Hospital
+ATM
+Petrol Pump
+Restaurant
 
-📏 Route Information
+🌆 Multiple Cities
 
-The system displays:
-
-📍 Source City
-🎯 Destination City
-🛣️ Best Route
-📏 Total Distance
-🚗 Vehicle
-🚦 Traffic Condition
-⏱️ Estimated Travel Time
-⛽ Fuel Cost
-📍 Nearby Places
-
-The system can also display nearby important places for the selected destination city.
-
-Examples include:
-
-🏥 Hospitals
-🏧 ATMs
-⛽ Petrol Pumps
-🍕 Restaurants
-🏦 Banks
-🏙️ Supported Cities
-
-The project currently includes multiple cities from different Indian states.
+The system supports cities from multiple Indian states.
 
 Bihar
 Patna
@@ -154,48 +130,102 @@ Punjab
 Chandigarh
 Ludhiana
 Amritsar
-🧠 Algorithms Used
-1️⃣ Dijkstra's Algorithm
 
-Dijkstra's Algorithm is used to find the shortest path between two cities.
+🚗 Vehicle Support
 
-It calculates:
+Users can select different vehicle types.
 
-Shortest route
-Minimum distance
-Best path between source and destination
+Currently supported:
 
-Example:
+🚗 Car
+🏍️ Bike
+🚌 Bus
 
-Source → City A → City B → Destination
-2️⃣ Graph Data Structure
+The estimated travel time is calculated according to the selected vehicle speed and traffic conditions.
 
-Cities are represented as nodes.
+🚦 Traffic System
 
-Road connections are represented as edges.
+The application supports different traffic levels.
 
-Example:
+🟢 Low Traffic
 
-Patna
-  |
-  | 20 KM
-  |
-Hajipur
-  |
-  | 52 KM
-  |
-Muzaffarpur
+Fast travel conditions.
 
-The graph stores:
+🟡 Medium Traffic
 
-City → Connected City → Distance → Traffic
-3️⃣ BFS Algorithm
+Moderate traffic conditions.
 
-Breadth First Search (BFS) is used for handling nearby places.
+🔴 High Traffic
 
-It helps retrieve nearby location data based on the selected city.
+Slow travel conditions.
 
-🛠️ Technologies Used
+Traffic conditions affect the estimated travel time.
+
+📊 Route Summary
+
+After finding a route, the system displays:
+
+📍 Source City
+
+🎯 Destination City
+
+🛣️ Best Route
+
+📏 Distance
+
+🚗 Vehicle
+
+🚦 Traffic Level
+
+⏱️ Estimated Travel Time
+
+⛽ Estimated Fuel Cost
+
+📍 Nearby Places
+
+The application can display nearby places for the destination city.
+
+Examples include:
+
+🏥 Hospitals
+🏧 ATMs
+⛽ Petrol Pumps
+🍕 Restaurants
+🏦 Banks
+🌙 Dark Mode
+
+The application includes a modern theme switching system.
+
+Users can switch between:
+
+☀️ Light Mode
+
+and
+
+🌙 Dark Mode
+
+The interface automatically updates its colors and appearance.
+
+🗺️ Map Features
+
+The project uses Leaflet.js for map visualization.
+
+Available map layers include:
+
+🛰️ Satellite Map
+🗺️ Normal Map
+📍 City Labels
+
+The satellite layer provides a realistic geographical view including:
+
+Roads
+Rivers
+Forest areas
+Terrain
+Buildings
+
+🛠️ Technologies Used :
+
 Frontend
 HTML5
 CSS3
@@ -203,16 +233,19 @@ JavaScript
 Leaflet.js
 OpenStreetMap
 Esri Satellite Map
+
 Backend
 Node.js
 Express.js
-REST API
 CORS
-Algorithms & Data Structures
-Graph
+
+Algorithms
+Graph Data Structure
 Dijkstra's Algorithm
-BFS Algorithm
-📂 Project Structure
+Breadth First Search (BFS)
+
+📁 Project Structure :
+
 Smart-City-Traffic-Management-System
 │
 ├── client
@@ -260,301 +293,177 @@ Smart-City-Traffic-Management-System
 │   ├── services
 │   │   └── routeService.js
 │   │
-│   └── server.js
+│   ├── server.js
+│   └── package.json
 │
 ├── README.md
 │
-└── Smart-City-Traffic-Management-System.pptx
-⚙️ How the System Works
-Step 1: Select Source City
+├── Smart-City-Traffic-Management-System.pptx
+│
+└── Internship Project Report.pdf
 
-The user selects a source city.
-
-Example:
-
-Patna
-
-The map automatically highlights the selected city.
-
-Step 2: Select Destination City
-
-The user selects a destination city.
-
-Example:
-
-Varanasi
-
-The destination city is highlighted on the map.
-
-Step 3: Select Vehicle
-
-Users can select:
-
-Car
-Bike
-Bus
-
-Different vehicles have different average speeds.
-
-Step 4: Find Best Route
-
-When the user clicks:
-
-Find Best Route →
-
-The frontend sends a request to:
-
-/api/route
-
-Example:
-
-http://localhost:5000/api/route?source=Patna&destination=Muzaffarpur&vehicle=Car
-Step 5: Route Calculation
-
-The backend:
-
-Reads the source city.
-Reads the destination city.
-Uses the Graph data structure.
-Runs Dijkstra's Algorithm.
-Finds the shortest available route.
-Calculates traffic conditions.
-Calculates estimated travel time.
-Calculates fuel cost.
-Sends the result to the frontend.
-Step 6: Map Visualization
-
-The frontend:
-
-Draws the route.
-Highlights source city.
-Highlights destination city.
-Adjusts map zoom.
-Shows the complete route.
-🚀 Installation and Setup
-1️⃣ Clone the Repository
+⚙️ Installation
+1. Clone the Repository
 git clone https://github.com/saumyamihir/Smart-City-Traffic-Management-System.git
-
 Move into the project folder:
-
 cd Smart-City-Traffic-Management-System
-🔧 Backend Setup
 
-Move into the server folder:
-
+🖥️ Backend Setup
+Move to the server folder:
 cd server
-
 Install dependencies:
-
 npm install
-
 Start the server:
-
 node server.js
-
 The backend will run on:
-
+http://localhost:5000
+Test the backend:
 http://localhost:5000
 
-You should see:
-
-Server running at http://localhost:5000
-💻 Frontend Setup
-
-Open the client folder.
-
-You can run the frontend using VS Code Live Server.
-
-Using Live Server
-Open the project in VS Code.
-Open:
-client/index.html
-Right-click on index.html.
-Click:
-Open with Live Server
-
-The website will open in your browser.
-
-🔌 API Endpoints
+🌐 API Endpoints
 Get All Cities
 GET /api/cities
 
 Example:
-
 http://localhost:5000/api/cities
-
-Response:
-
-[
-  "Patna",
-  "Hajipur",
-  "Muzaffarpur"
-]
-Find Route
+Find Best Route
 GET /api/route
 
+Parameters:
+source
+destination
+vehicle
+
 Example:
-
-/api/route?source=Patna&destination=Muzaffarpur&vehicle=Car
-
-Example Response:
-
-{
-  "path": [
-    "Patna",
-    "Hajipur",
-    "Muzaffarpur"
-  ],
-  "distance": 72,
-  "traffic": "Medium",
-  "estimatedTime": "1 Hour 34 Min",
-  "fuelCost": "360"
-}
+http://localhost:5000/api/route?source=Patna&destination=Motihari&vehicle=Car
 Get Nearby Places
 GET /api/places
-
 Example:
+http://localhost:5000/api/places?city=Patna
 
-/api/places?city=Patna
+▶️ Frontend Setup
+Open the client folder.
+The frontend can be run using:
+VS Code Live Server
+A local development server
+Netlify deployment
+Open:
+client/index.html
+For best results, use the Live Server extension in VS Code.
 
-Example Response:
+🔄 How the System Works
 
-[
-  "AIIMS Hospital",
-  "SBI ATM",
-  "Indian Oil Petrol Pump",
-  "Domino's Pizza"
-]
-🚦 Traffic Calculation
+User Selects Source City
+          │
+          ▼
+User Selects Destination
+          │
+          ▼
+Select Vehicle
+          │
+          ▼
+Find Best Route
+          │
+          ▼
+Backend API Request
+          │
+          ▼
+Graph Data Structure
+          │
+          ▼
+Dijkstra Algorithm
+          │
+          ▼
+Best Route Found
+          │
+          ├───────────────┐
+          ▼               ▼
+Route Summary       Live Map Route
+          │
+          ▼
+Traffic + Time + Fuel Cost
+          │
+          ▼
+Nearby Places
 
-Traffic conditions are used to adjust travel time.
+🧮 Route Calculation
 
-const trafficMultiplier = {
-    Low: 1,
-    Medium: 1.3,
-    High: 1.6
-};
-
-Higher traffic results in longer travel time.
-
-🚗 Vehicle Speed
-
-Example vehicle speeds:
-
-const vehicleSpeed = {
-    Car: 60,
-    Bike: 45,
-    Bus: 40
-};
-
-The estimated travel time depends on:
+The system calculates travel time based on:
 
 Distance
 +
 Vehicle Speed
 +
 Traffic Condition
-🗺️ Map Features
 
-The system includes:
+Example traffic multiplier:
 
-🛰️ Satellite Map
-🗺️ Normal Map
-📍 City Markers
-🟢 Source Marker
-🔴 Destination Marker
-🛣️ Route Line
-🔍 Automatic Zoom
-📌 Interactive Popups
+Low Traffic     → Normal Speed
+
+Medium Traffic  → Moderate Delay
+
+High Traffic    → Higher Delay
+🎨 User Interface Features
+
+The application provides a modern and responsive interface.
+
+Features include:
+
+Professional navigation bar
+Responsive layout
+Animated UI components
+Light and dark theme
+Interactive route finder
+Satellite map
+Route summary cards
+Traffic badges
+Automatic scrolling to route map
+Source and destination markers
+🚀 Future Improvements
+
+Future versions of the project can include:
+Real-time traffic data
+Google Maps API integration
+Real road route geometry
+Live GPS tracking
+Traffic camera integration
+Accident detection
+Emergency vehicle route priority
+AI-based traffic prediction
+Real-time weather integration
+Public transport routes
+Database integration
+User authentication
+Mobile application
+Real-time notifications
 📸 Project Screenshots
-🏠 Home Page
 
-🗺️ Live Map
+Screenshots of the project are available in:
 
-🚗 Route Finder
+client/assets/
+Including:
+Home Page
+Live Map
+Route Finder
+Route Summary
+City Working Map
 
-🛣️ Route Visualization
-
-🚦 Route Summary
-
-🔮 Future Improvements
-
-The following features can be added in future versions:
-
-🌍 Real-time traffic data
-🛰️ GPS tracking
-📡 Live vehicle tracking
-🚨 Accident detection
-🚑 Emergency vehicle priority
-🤖 AI-based traffic prediction
-📊 Traffic analytics dashboard
-🚦 Smart traffic signal control
-🛣️ Real road routing using external routing APIs
-📱 Mobile application
-🌐 Complete cloud deployment
-⚠️ Current Limitations
-
-Currently, the route is calculated using manually defined city connections.
-
-The system does not yet use real-time GPS navigation data.
-
-The route displayed on the map connects the stored city coordinates and may not exactly follow real roads.
-
-Future versions can integrate services such as:
-
-OpenRouteService
-OSRM
-Google Maps API
-
-for real-world road navigation.
-
-🎯 Learning Concepts Covered
-
-This project demonstrates:
-
-Frontend Development
-Backend Development
-REST APIs
-Graph Data Structure
-Dijkstra's Algorithm
-BFS Algorithm
-Route Optimization
-JavaScript Fetch API
-Node.js
-Express.js
-Interactive Maps
-Satellite Maps
-API Integration
-👨‍💻 Author
-
-Saumya Mihir
+👨‍💻 Developer
+Saumya Mihir,Naureen,Shubham Yadav
 
 GitHub:
 
-https://github.com/saumyamihir
-
-Project Repository:
-
-https://github.com/saumyamihir/Smart-City-Traffic-Management-System
+Saumya Mihir on GitHub
 
 ⭐ Support
 
-If you like this project, please consider giving the repository a ⭐ on GitHub.
+If you like this project, please consider giving the repository a ⭐.
 
-🚀 Smart City Traffic Management System
+📄 License
 
-Making city transportation smarter through algorithms, interactive maps, route optimization, and modern web technologies. 🚦🛣️
+This project is developed for educational and academic purposes.
 
+🚦 Smart City Traffic Management System
 
-### Ab kya karna hai:
+Find Smart Routes. Save Time. Travel Better.
 
-1. Project folder me `README.md` open kar.
-2. Purana content **Ctrl + A → Delete**.
-3. Upar wala pura code paste kar.
-4. Save kar.
-5. Phir terminal me:
-
-bash
-git add README.md
-git commit -m "Update README for complete Smart City Traffic Management System"
-git push origin main
