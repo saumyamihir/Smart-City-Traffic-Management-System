@@ -15,6 +15,16 @@ The upgraded system supports multiple cities across different Indian states and 
 
 ---
 
+🌐 Live Demo
+🚀 Frontend
+https://smart-city-traffic-management-system.netlify.app/
+
+⚙️ Backend API
+https://smart-city-traffic-backend.onrender.com/
+
+💻 GitHub Repository
+https://github.com/saumyamihir/Smart-City-Traffic-Management-System
+
 # 📸 Project Screenshots
 
 ## 🏠 Home Page
