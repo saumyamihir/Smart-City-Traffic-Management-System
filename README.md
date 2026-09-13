@@ -29,7 +29,7 @@ https://github.com/saumyamihir/Smart-City-Traffic-Management-System
 
 ## 🏠 Home Page
 
-![Home Page](client/assets/HomePage.png)
+![Home Page]("C:\Users\saumy\OneDrive\Desktop\Bin\SummerInternShip_Project\Smart-City-Traffic_duplicate\client\assets\Home_Page.jpeg")
 
 ---
 
@@ -41,7 +41,7 @@ https://github.com/saumyamihir/Smart-City-Traffic-Management-System
 
 ## 🌍 Interactive Live Map
 
-![Live Map](client/assets/Live%20Map.png)
+![Live Map]("C:\Users\saumy\OneDrive\Desktop\Bin\SummerInternShip_Project\Smart-City-Traffic_duplicate\client\assets\Map.jpeg")
 
 ---
 
